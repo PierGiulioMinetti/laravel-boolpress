@@ -50,10 +50,13 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
+                                <a href="{{route('admin.home')}}" class="nav-link">Dashboard</a>
+                            </li>
+                            <li class="nav-item dropdown">
                                 <a href="{{route('admin.posts.index')}}" class="nav-link">Posts</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="{{route('admin.home')}}" class="nav-link">Dashboard</a>
+                                <a href="{{route('admin.posts.create')}}" class="nav-link">Create</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
