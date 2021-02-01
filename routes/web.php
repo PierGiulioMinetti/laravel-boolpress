@@ -35,4 +35,9 @@ Auth::routes();
         // Home Admin
  Route::get('/', 'HomeController@index')->name('home');
         // Rotte Crud Post
+
+        // Rotte Post CRUD
+ Route::resource('posts', 'PostController');
+
+
     });
