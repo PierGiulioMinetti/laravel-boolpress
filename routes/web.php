@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // HOMEPAGE
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
 
 // ROTTE PER LOGIN / REGISTRAZIONE
@@ -31,9 +29,10 @@ Auth::routes();
 
  Route::prefix('admin')
     ->namespace('Admin')
+    ->name('admin.')
     ->middleware('auth')
     ->group(function(){
         // Home Admin
-
+ Route::get('/', 'HomeController@index')->name('home');
         // Rotte Crud Post
-    })
+    });
