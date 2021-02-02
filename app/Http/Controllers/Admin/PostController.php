@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Post;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -41,7 +43,28 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $request->validate([
+            'title'=>'required',
+            'body'=>'required',
+        ]);
+
+        // Get Logged User
+        $data['user_id'] = Auth::id();
+        $data['slug'] = Str::slug($data['title'], '-');
+
+        // Creazione instanza
+        $newPost = new Post();
+        // Salvataggio
+        $newPost->fill($data); //-->fillable nel model
+            // Controllo salvataggio
+        $saved = $newPost->save();
+
+        // Redirect
+        if($saved){
+            return redirect()->route('admin.posts.index');
+        }
     }
 
     /**
