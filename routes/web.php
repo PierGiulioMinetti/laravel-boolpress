@@ -20,6 +20,7 @@ Route::get('/', 'HomeController@index')->name('home');
  * ROTTE PUBLIC
  */
 Route::get('posts', 'PostController@index')->name('posts.index');
+Route::get('posts/{slug}', 'PostController@show')->name('posts.show');
 
 
 // ROTTE PER LOGIN / REGISTRAZIONE

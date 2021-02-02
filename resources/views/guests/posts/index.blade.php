@@ -21,7 +21,7 @@
                         {{$post->updated_at->diffForHumans()}}
                     </div>
                 </div>
-                <a href="">Read More</a>
+                <a href="{{route('posts.show', $post->slug)}}">Read More</a>
             </article>
         @endforeach
     @endif
