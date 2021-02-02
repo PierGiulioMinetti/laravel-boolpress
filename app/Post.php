@@ -22,7 +22,7 @@ class Post extends Model
      */
 
     //  user-posts
-    public function posts() {
+    public function user() {
         return $this->belongsTo('App\User');
     }
 }

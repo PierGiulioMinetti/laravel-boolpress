@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 // HOMEPAGE
 Route::get('/', 'HomeController@index')->name('home');
 
+/**
+ * ROTTE PUBLIC
+ */
+Route::get('posts', 'PostController@index')->name('posts.index');
+
 
 // ROTTE PER LOGIN / REGISTRAZIONE
 
